@@ -37,7 +37,9 @@ const LegendSvg = ({
     symbolSize,
     symbolSpacing,
     symbolShape,
+    textColor,
 }) => {
+    // eslint-disable-next-line no-unused-vars
     const { width, height, padding } = computeDimensions({
         itemCount: data.length,
         itemWidth,
@@ -74,6 +76,7 @@ const LegendSvg = ({
                     justify={justify}
                     label={label}
                     fill={fill}
+                    textColor={textColor}
                 />
             ))}
         </g>
@@ -116,6 +119,7 @@ LegendSvg.propTypes = {
     symbolSize: PropTypes.number,
     symbolSpacing: PropTypes.number,
     symbolShape: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    textColor: PropTypes.string.isRequired,
 }
 
 LegendSvg.defaultProps = {
@@ -126,6 +130,7 @@ LegendSvg.defaultProps = {
     // items
     itemDirection: DIRECTION_LEFT_TO_RIGHT,
     itemsSpacing: 0,
+    textColor: 'black',
 }
 
 export default LegendSvg
